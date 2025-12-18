@@ -1,0 +1,12 @@
+
+# ignore everything in this folder by default
+/*
+
+# keep this .gitignore tracked so we can whitelist folders
+!.gitignore
+
+# allow lesson-1 and lesson-2 and their contents
+!/lesson-1/
+!/lesson-1/**
+!/lesson-2/
+!/lesson-2/**
