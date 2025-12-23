@@ -23,16 +23,16 @@ console.log(typeof 42); // "number"
 console.log(typeof true); // "boolean"
 console.log(typeof "42"); */
 
-/* console.log(typeof [1, 2, 3]); // "object"
-console.log(typeof { name: "John", age: 30 }); // "object"
+/* console.log(typeof [1, 2, 3]); 
+console.log(typeof { name: "John", age: 30 }); 
 console.log(typeof undefined)
-console.log(typeof "" ); */
+console.log(typeof "" );
 
-/* let variable;
-console.log(typeof variable); */ // "undefined"
+let variable;
+console.log(typeof variable); 
 
-/* let emptyValue = null;
-console.log(typeof emptyValue); */ // "object"
+let emptyValue = null;
+console.log(typeof emptyValue);  */
 
 // console.log(typeof NaN); // "number"
 
@@ -134,9 +134,9 @@ console.log(text, typeof text); 'false' */
 console.log(typeof num)
 
 const bool = Boolean(num);
-console.log(bool, typeof bool); */ // Результат: true (тип: boolean)
-
-/* let bool = Boolean('2');
+console.log(bool, typeof bool); // Результат: true (тип: boolean) */
+/* 
+let bool = Boolean('2');
 console.log(bool, typeof  bool);
 
 
@@ -144,12 +144,12 @@ let bool = Boolean(undefined);
 console.log(bool, typeof  bool);
 
 let bool = Boolean(null);
-console.log(bool, typeof  bool); */
-
-/* let bool = Boolean('');
 console.log(bool, typeof  bool);
- */
-/* let bool = Boolean(-9);
+
+let bool = Boolean('');
+console.log(bool, typeof  bool);
+
+let bool = Boolean(-9);
 console.log(bool, typeof  bool); */
 
 // --- Неявне перетворення ---
@@ -160,8 +160,8 @@ console.log(bool, typeof  bool); */
 const str = "Naturo";
 const result = num + str;
 console.log(result)
-console.log(typeof result)
- */
+console.log(typeof result) */
+
 /* const num = 42;
 const str = "2";
 const result = num + str; // Результат: "422" (тип: string)
@@ -172,11 +172,11 @@ console.log(result, typeof result) */
 /* const str = "true";
 const bool = true;
 const result = str + bool; // Результат: "truetrue" (тип: string)
-console.log(result, typeof result)
- */
+console.log(result, typeof result) */
 
-/* //Question 0. Який буде результат та тип данних цього результату?
-console.log(3 + 4);
+
+//Question 0. Який буде результат та тип данних цього результату?
+/* console.log(3 + 4); 
 console.log('3 + 4');
 console.log('3' + '4'); */
 
@@ -184,20 +184,20 @@ console.log('3' + '4'); */
 /* const num = 4;
 const str = "Kovbasa";
 const result = num + str + num;
-console.log(result, typeof result) */
-
+console.log(result, typeof result)
+ */
 //Question 2. Який буде результат та тип данних цього результату?
 /* const num = 4;
 const str = 'Playstation';
 const result = 'Hello' + str + num;
-console.log(result, typeof result)
- */
+console.log(result, typeof result) */
+
 
 //Question 3. Який буде результат та тип данних цього результату?
-/* let name = "Rom";
-let count = (name +12).length; "Rom12"
-console.log(count)
- */
+/* let name1 = "Rom";
+let count = (name1 +12).length; 
+console.log(count) */
+
 
 
 //--------------------------------------------------------------------------------------------------
@@ -219,34 +219,61 @@ console.log(count)
 
 /* console.log (4 + true);
 console.log (false + true);
-console.log ("JS is cool:"+ true); */
-
+console.log ("JS is cool:"+ true);
+ */
 
 /* console.log("Hello" - 5);
 console.log("55" - 5);
 console.log(5 - null); */
 
+/* console.log("10" / 2);
+console.log("10" * 2);
+console.log(5 * null); */
+
+/* let num = null
+console.log(Number(num)); // 0
+ */
 
 /* let n = 2;
 n += 5;  // n = n + 5 =  7
+console.log(n)
 n *= 2; // n = n * 2 = 7 * 2
-console.log(n) */
+console.log(n)
 
-/* console.log(12 % 6); 
+n = 2**3; // 2 у степені 3
+console.log(n)
+
+console.log(12 % 6); // 0   
+console.log(13 % 6); // 1
+console.log(14 % 6); // 
+console.log(14 % 6);
 console.log(-6 % 2); 
- */
 
+console.log("0"===0);
+console.log("0"==0);
 
-/* var counter1 = 2;
+var counter1 = 2;
 console.log(counter1);
 //counter = counter +1;
 counter1++;
 console.log(counter1);
- */
 
-/* console.log(20 != "20");
+let x = 5;
+x--
+console.log(x); //6
+
+let a = 5;
+console.log(++a); 
+console.log(a);
+
+let b = 5;
+console.log(b++);
+console.log(b);  */
 
 
+/*  console.log(20 !== "20"); */
+
+/*
 == та != рівність / нерівність
 
 === та !== строга рівність / нерівність
@@ -260,21 +287,21 @@ console.log(counter1);
 // Логічне «І»
 // вираз && вираз
 
-/* 
+
 const age = 20;
 console.log(age > 10 && age < 30); // true && true -> true
- */
+
 
 // Якщо хоча б один із операндів буде приведений до false, результатом виразу буде його значення.
 
 
-/* const age = 50;
-console.log(age > 60 && age < 120); // true && false -> false
+const age = 50;
+console.log(age < 60 && age > 120); // true && false -> false
 console.log(age > 80 && age < 120); // false && true -> false
 
-console.log( 1 && 5  && "" && false);
-console.log("Mango" && "Polly") 
- */
+console.log( 1 && 5  && "fdd" && 0); // true && true && false -> false
+console.log("Mango" && null && 42 && true) 
+
 
 // Логічне «АБО»
 // вираз || вираз
@@ -282,7 +309,7 @@ console.log("Mango" && "Polly")
 // логічне «АБО» зупиняється на правді і повертає те, на чому зупинилося або останній операнд.
 
 
-/* const age = 5;
+const age = 5;
 console.log(age < 10 || age > 30); // true || false -> true
 
 
@@ -294,13 +321,23 @@ console.log(age < 10 || age > 30); // false || true -> true
 
 const age = 20;
 console.log(age < 10 || age > 30); // false || false -> false
- */
 
 
 
-/* console.log( "" || false || 0 || null || undefined ); 
 
- */
+        console.log( "" || false || 0 || null || undefined ); 
+        console.log( "Hello" || 0 || null || undefined );
+        console.log( 0 || 5 || "fdd" || 0); 
+        console.log("Mango" || null || 42 || true)
+
+        console.log( null || 3 || 4 );
+// ! -1
+// && - 2
+// || - 3
+
+console.log(null == '');
+
+console.log((+null == false) < 1);
 
 // Логічне «НЕ»
 // Оператор ! приводить операнд до буля, якщо необхідно, а потім робить інверсію - змінює його на протилежний true -> false або false -> true.
@@ -316,8 +353,8 @@ console.log(!"");
 
 const isOnline = true;
 const isNotOnline = !isOnline; // !isOnline -> !true -> false
-
  */
+
 
 //--------------------------------------------------------------------------------------------------
 // --- Умовні конструкції ---
@@ -325,9 +362,9 @@ const isNotOnline = !isOnline; // !isOnline -> !true -> false
 
 // IF
 
-
-/* let cost = 0;
-const subscription = "pro";
+/* 
+let cost = 0;
+const subscription = "basic";
 
 if (subscription === "pro") {
  cost = 100;
@@ -335,13 +372,14 @@ if (subscription === "pro") {
 
 console.log(cost); // 100
 
+
 const cost1 = subscription ==="pro" ? 100 : 0; 
 console.log(cost1); // 100 */
  
 // IF...ELSE
 
-/* let cost;
-const subscription = "free";
+let cost;
+const subscription = "pro";
 console.log(cost); 
 
 if (subscription === "pro") {
@@ -349,18 +387,17 @@ if (subscription === "pro") {
 } 
 
 else {
- cost = 0;
+ cost = 1;
 }
 
-console.log(cost); // 0 */
-
+console.log(cost); // 0
 
 
 //ELSE...IF
 
 
-/* let cost;
-const subscription = "qwee";
+let cost;
+const subscription = "premium";
 
 if (subscription === "free") {
  cost = 0;
@@ -379,12 +416,12 @@ else {
 
 console.log(cost); // 500
 
- */
+
 
 // ТЕРНАРНИЙ ОПЕРАТОР
 
 
-/* let type;
+let type;
 const age = 20;
 
 if (age >= 18) {
@@ -394,7 +431,8 @@ if (age >= 18) {
 }
 
 console.log(type); // "adult"
- */
+
+const type = age >= 18 ? "adult" : "child";
 
 // <умова> ? вираз_якщо_умова_правдива> : <вираз_якщо_умова_хибна>
 
@@ -412,7 +450,7 @@ console.log(bigNumber2); // 10
 
 
 let cost;
-const subscription = "free";
+const subscription = "pro";
 
 switch (subscription) {
  case "free":
@@ -465,10 +503,10 @@ alert(message);
 
 // Просимо клієнта підтвердити бронювання готелю
 // і зберігаємо результат роботи confirm у змінну
-/*
-const isComing = confirm("Please confirm hotel reservation");
-console.log(isComing);
-*/
+
+/* const isComing = confirm("Please confirm hotel reservation");
+console.log(isComing); */
+
 
 
 // Запитуємо назву готеля, в якому хотів би зупинитися клієнт
@@ -489,7 +527,7 @@ console.log(value); // "5"
 
 // TRY...CATCH
 
-/* 
+
 function divide(a, b) {
   try {
       if (b === 0) {
@@ -502,23 +540,27 @@ function divide(a, b) {
   }
 }
 
+console.log(divide(10, undefined)); // 5
+
+
 const result = divide(10, 0);
+
 if (result === null) {
   console.log("Ділення не вдалося.");
 } else {
   console.log("Результат: " + result);
 };
- */
 
 
-/* try {
+
+try {
   let result = someFunction(); // Припустимо, що ця функція не існує
   console.log(result);
 } 
 catch (error) {
   console.log("Сталася помилка: " + error.message);
 }
- */
+
 
 // TRY...CATCH...FANALLY
 /* try {
