@@ -1,6 +1,0 @@
-
-# ignore everything in this folder by default
-/*
-
-# keep this .gitignore tracked so we can whitelist folders
-!.gitignore
