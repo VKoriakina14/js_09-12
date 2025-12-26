@@ -27,13 +27,13 @@ console.log("x = " + x); */
 
 // 5. Які кінцеві значення всіх змінних q, r, w та d після виконання коду? 
 /* let q = 1; 
-let r = 1;
 let w = ++q; 
-let d = r++; 
-
 console.log("q = " + q);
-console.log("r = " + r);
 console.log("w = " + w);
+
+let r = 1;
+let d = r++; 
+console.log("r = " + r);
 console.log("d = " + d)
  */
 
@@ -84,6 +84,7 @@ console.log("b = " + b);  */
 /* let i = 0;
 while (i < 10) {
     console.log('i= ' + i);
+    i++;
 } */
 
 
@@ -125,11 +126,11 @@ while (i) {
 /* let clientCounter = 18;
 const maxClients = 25;
 
-while (clientCounter  < maxClients) {
+while (clientCounter  <= maxClients) {
   console.log(clientCounter);
   clientCounter += 1;
-} */
-
+}
+ */
 
 
  // Do...while​
@@ -149,8 +150,8 @@ do {
     console.log("i = " + i);
 } while (i < 5);
 
-console.log("Після закінчення циклу i = " + i); */
-
+console.log("Після закінчення циклу i = " + i);
+ */
 
 /* do {
     console.log("Hello JS!");
@@ -159,13 +160,13 @@ console.log("Після закінчення циклу i = " + i); */
 
 // на практиці, як може виглядати: 
 
-let password = "";
+/* let password = "";
 
 do {
   password = prompt("Введіть пароль довший 4-х символів", "");
 } while (password.length < 5);
 
-console.log("Ввели пароль: ", password);
+console.log("Ввели пароль: ", password); */
 
 
 
@@ -200,17 +201,18 @@ for (let i = 0; i <= target; i += 1) {
   sum += i;
 }
 
-console.log(sum);
- */
+console.log(sum); */
+
 
 
 // Згадаємо про операцію a % b і виведемо остачу від ділення за допомогою циклу.
 
 /* const max = 10;
+
 for (let i = 0; i < max; i += 1) {
   console.log(`${max} % ${i} = `, max % i);
-}
- */
+} */
+
 
 
 /* Оператор break​
@@ -231,8 +233,8 @@ for (let i = 0; i < max; i += 1) {
     }
   }
   
-  console.log("Лог після циклу");
-   */
+  console.log("Лог після циклу"); */
+  
 
 
 
@@ -261,19 +263,19 @@ for (let i = 0; i < number; i += 1) {
 /* let number = 5; 
 for(let i = 0; i <= 9; i++) {
     console.log(`Результат множення ${number} * ${i} = ${number * i}`)
-} */
-
+}
+ */
 
 // цикл в циклі
 
-/* for(let i = 1; i <= 9; i++) {
+for(let i = 1; i <= 9; i++) {
         for(let j =1; j <= 9; j++) {
         console.log(`Результат множення ${i} * ${j} = ${i * j}`)
         }
 
     console.log("------------------------------------")
 }
- */
+
 
 // Мітки для циклів
 
@@ -322,16 +324,16 @@ for(let i = 0; i <= 9; i++) {
   у такому випадку записуються просто порожні круглі дужки. */
 
 
-/*  // 1. Оголошення параметрів x, y, z
-function multiply(x, y, z) {
+ // 1. Оголошення параметрів x, y, z
+/* function multiply(x, y, z) {
     console.log(`Результат множення дорівнює ${x * y * z}`);
   }
   
   // 2. Передача аргументів
   multiply(2, 3, 5); // Результат множення дорівнює 30
   multiply(4, 8, 12); // Результат множення дорівнює 384
-  multiply(17, 6, 25); // Результат множення дорівнює 2550 */
-    
+  multiply(17, 6, 25); // Результат множення дорівнює 2550
+     */
 
 
 
@@ -366,7 +368,7 @@ function multiply(x, y, z) {
 // може бути більше одного return
 
 /* function checkAge (){
-    let age = 10
+    let age = 21
     if(age >= 18){
         return console.log("Є дозвіл");
     }
@@ -380,19 +382,19 @@ checkAge(); */
 // Порядок виконання коду
 
 
-/*   function multiply(x, y, z) {
+  function multiply(x=1, y=2, z=3) {
     console.log(`Результат множення дорівнює ${x * y * z}`);
   }
   
   console.log("Лог до виклику функції multiply");
-  multiply(2, 3, 5); // Результат множення дорівнює 30
+  multiply(2); // Результат множення дорівнює 30
   console.log("Лог після виклику функції multiply");
   
   // Послідовність логів в консолі
   // "Лог до виклику функції multiply"
   // "Результат множення дорівнює 30"
   // "Лог після виклику функції multiply"
-   */
+  
 
 
   // Параметри за замовчуванням
@@ -407,8 +409,8 @@ checkAge(); */
   
   count(1, 5); // countFrom = 1, countTo = 5, step = 1
   count(2); // countFrom = 2, countTo = 10, step = 1
-  count(); // countFrom = 0, countTo = 10, step = 1 */
-  
+  count(); // countFrom = 0, countTo = 10, step = 1
+   */
 
   // Псевдомасив arguments​
 
@@ -429,8 +431,8 @@ checkAge(); */
   
   console.log(multiply(1, 2, 3)); //  6
   console.log(multiply(1, 2, 3, 4)); //  24
-  console.log(multiply(1, 2, 3, 4, 5)); //  120
-   */
+  console.log(multiply(1, 2, 3, 4, 5)); //  120 */
+  
 
 
 
@@ -455,7 +457,7 @@ function multiply(x, y, z) {
 // Різниця в тому, що функціональний вираз не можна викликати до місця його створення,
 //  тільки після нього, тому що це буквально оголошення const змінної.
 
-/* // Помилка! Не працює виклик до оголошення
+// Помилка! Не працює виклик до оголошення
 multiply(1, 2, 3);
 
 const multiply = function (x, y, z) {
@@ -464,13 +466,13 @@ const multiply = function (x, y, z) {
 
 //  Працює виклик після оголошення
 multiply(4, 5, 6);
- */
+
  
 // A оголошення функції можна викликати до місця її створення в коді.
 
-/* 
+
 // Працює виклик до оголошення
-multiply(1, 2, 3);
+/* multiply(1, 2, 3);
 
 function multiply(x, y, z) {
   console.log(`Результат множення дорівнює ${x * y * z}`);
@@ -484,7 +486,7 @@ multiply(4, 5, 6);
 
 // Стрілкові фунуції
 
-/* 
+
 // Звичайне оголошення функції
 function classicAdd(a, b, c) {
     return a + b + c;
@@ -493,25 +495,25 @@ function classicAdd(a, b, c) {
   // Те саме стрілочною функцією
   const arrowAdd = (a, b, c) => {
     return a + b + c;
-  }; */
+  };
 
 
   
 // Якщо параметр один, його можна оголошувати без круглих дужок.
-/* const add = a => {
+const add = a => {
     return a + 5;
-  }; */
+  };
   
 // Якщо параметри відсутні, то обов'язково повинні бути порожні круглі дужки.
-/* const greet = () => {
+const greet = () => {
     console.log("Привіт!");
-  }; */
+  };
   
 
 
 // callback (функція що визиває функцію)
 
-/* function greet(name) {
+function greet(name) {
     return `Ласкаво просимо ${name}.`;
   }
   
@@ -519,14 +521,14 @@ function classicAdd(a, b, c) {
   console.log(greet("Манго")); // Ласкаво просимо Манго.
   
   // Виводимо функцію greet у консоль, не викликаючи її
-  console.log(greet); // ƒ greet() { return `Ласкаво просимо ${name}.`; } */
+  console.log(greet); // ƒ greet() { return `Ласкаво просимо ${name}.`; }
   
 
 
 /*   Функція зворотного виклику (callback, колбек) - це функція,
 яка передається іншій функції як аргумент, а та, в свою чергу, викликає передану функцію. */
 
-/* // Колбек-функція
+// Колбек-функція
 function greet(name) {
     console.log(`Ласкаво просимо ${name}.`);
   }
@@ -538,9 +540,17 @@ function greet(name) {
   }
   
   registerGuest("Манго", greet);
-   */
+  
 
 
+  const coadd = (x, y) => x + y;
+
+  function processNumbers(a, b, callback) {
+    return callback(a, b);
+  }
+
+  console.log(processNumbers(5, 10, coadd)); // 15
+  
   // Ми передали посилання на функцію greet як аргумент, тому вона буде присвоєна в параметр callback 
   // і викликана всередині функції registerGuest за допомогою круглих дужок. Ім'я параметра для колбека 
   // може бути довільним, головне пам'ятати, що значенням буде функція.
