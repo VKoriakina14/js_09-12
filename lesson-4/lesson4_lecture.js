@@ -2,22 +2,18 @@
 let i = 7;
 
 while (i){
-    console.log(i--);
+    console.log(--i);
 }
 
-console.log("i = " + 1);
+console.log("i = " + i);
 
 //2. Яке значення виведе цикл while?
 
 let w = 0;
-while (w++ < 5) {
+while (++w < 5) {
     console.log(w);
 }
 
-let q = 0;
-while(q++ < 5) {
-    console.log(q);
-}
 
 // Змінна q ініціалізується значенням 0
 // q дорівнює 0, умова 0 < 5 істинна, q стає 1, виводиться 1.
@@ -30,22 +26,21 @@ while(q++ < 5) {
 
 // 3. Чи потрібен else?
 
-function checkAge(age) {
+/* function checkAge() {
     if (age) {
         return true
     } else {
         return console.log("Питай батьків")
     }
 }
-
-checkAge(10);
+console.log(checkAge(10)); */
 
 // 4. Цей цикл безкінечний. Він ніколи не закінчується. Чому? 
 
-let j = 0;
+/* let j = 0;
 while (j != 10) {
     j += 0.2;
-}
+} */
 
 // 5. Що буде виведено у консоль?
 
@@ -57,31 +52,31 @@ for(let i = 1; i < 5; i++) {
 
 // 6. Що буде виведено у консоль? 
 
-let a = 10;
+/* let a = 10;
 do {
     a += 1;
     console.log(a);
 } while (a < 5);
-
+ */
 
 // 7. Що буде виведено у консоль? 
 
-let b = 10;
+/* let b = 10;
 if (b) {
     let b = 3;
     b *=b;
 }
-console.log(b);
+console.log(b); */
 
 // 8. Що буде виведено у консоль? 
-
+/* 
 function sum (num1, num2 = num1) {
 console.log(num1 + num2);
 }
 
 sum(10);
 sum(10, 5);
-
+ */
 //------------------------------------------
 
 // Які в нас є типи даних? Як вони називаються? 
@@ -117,14 +112,14 @@ BigInt: Представляє цілі числа довільної довжи
 Метод Number.parseInt() парсить з рядка ціле число.
 */
 
-/* const valueA = "5";
-console.log(Number(valueA)); // 5
-console.log(typeof Number(valueA)); // "number"
+const valueA = "5";
+console.log(Number(valueA)); 
+console.log(typeof Number(valueA)); 
 
 const valueB = "random string";
-console.log(Number(valueB)); // NaN
-console.log(typeof Number(valueB)); // "number"
- */
+console.log(Number(valueB)); 
+console.log(typeof Number(valueB)); 
+
 
 /* console.log(Number.parseInt("5px")); // 
 console.log(Number.parseInt("12qwe74")); // 
@@ -136,8 +131,8 @@ console.log(Number.parseInt("qweqwe")); //  */
 /* console.log(Number.parseFloat("5px")); // 
 console.log(Number.parseFloat("12qwe74")); // 
 console.log(Number.parseFloat("12.46qwe79")); // 
-console.log(Number.parseFloat("qweqwe")); // 
- */
+console.log(Number.parseFloat("qweqwe")); //  */
+
 
 
 
@@ -149,14 +144,6 @@ console.log(Number.parseFloat("qweqwe")); //
 true - якщо значення val - NaN
 false - якщо значення val - не NaN  */
 
-/* let a = 'qwerty' / 10; 
-console.log(isNaN(a));
-console.log(isNaN(NaN));
-console.log(isNaN(undefined));
-console.log(isNaN(null));
-console.log(isNaN(20));
-console.log(isNaN("20"));
-console.log(isNaN("qwerty")); */
 
 /* Для всіх значень val, крім NaN, при передачі в Number.isNaN(val) поверне false.
 Цей метод не намагається перетворити val в число, а просто виконує перевірку на NaN.
@@ -170,8 +157,8 @@ console.log(Number.isNaN(undefined));
 console.log(Number.isNaN(null));
 console.log(Number.isNaN(20));
 console.log(Number.isNaN("20"));
-console.log(Number.isNaN("qwerty")); */
-
+console.log(Number.isNaN("qwerty"));
+ */
 
 // Приклад використання: 
 
@@ -205,7 +192,7 @@ console.log(Number.isFinite(Infinity)); */
 // ---- toFixed() - скорочення до певного знаку після коми.
 
 
-/* let n = 12.44444322;
+/* let n = 12.45444322;
 let str = n.toFixed(1);
 console.log(str);
 
@@ -215,10 +202,10 @@ console.log((0.17 + 0.24).toFixed(2)); // 0.41 */
 // ---- toPrecision() - метод встановлює загальну кількість символів у числі, включаючи цілу частину, та знаки після коми.
 
 
-/* let num = 123.34356546;
-let formattedNum = num.toPrecision(6);
-console(formattedNum);
- */
+  /*       let num = 123.34356546;
+        let formattedNum = num.toPrecision(6);
+        console.log(formattedNum); */
+       
 
 //----------------------------------------------------------------------------
 
@@ -303,6 +290,7 @@ let doubleQuoted = "She said, \"Hello!\"";
 
 // Рядок з новим рядком та табуляцією
 let multiLine = "Line 1\n\tLine 2\n\t\tLine 3";
+console.log(multiLine);
 
 // Рядок зі зворотними слешами
 let path = "C:\\Program Files\\MyApp";
@@ -322,25 +310,19 @@ const myString = "Hello";
 console.log(myString.length);
 
 // charAt - дозволяє отримати символ за певним індексом у рядку 
-const str = "Hello, World!";
+/* const str = "Hello, World!";
 
-/* console.log(str.charAt(0));
+console.log(str.charAt(0));
 console.log(str.charAt(6));
 console.log(str.charAt(7));
-console.log(str.charAt(13)); // пустий рядок, бо нічого немає
- */
-/* 
-console.log(str[3]);
-console.log(str[5]);
-console.log(str[13]);
- */
+console.log(str.charAt(13)); // пустий рядок, бо нічого немає */
 
 
 //repeat - дозволяє повторити вміст рядка декілька разів і стоворити новий рядок
 
-const str = "QA pro";
+/* const str = "QA pro ";
 const repeatStr = str.repeat(3);
-console.log(repeatStr);
+console.log(repeatStr); */
 
 // Всім вже відома конкатенація 
 
@@ -350,24 +332,24 @@ console.log(str.concat("Pro!", " in Hillel! ")); */
 
 // endWith - використовується для перевірки, чи закінчується рядок заданим підрядком
 
-const str = "script.js";
+/* const str = "script.js";
 console.log(str.endsWith("js"));
 console.log(str.endsWith("script"));
-
+ */
 
 // includes - метод перевіряє, чи містить рядок певну підрядок, і повертає true або false.
 
-let phrase = "Hello, world!";
-console.log(phrase.includes("world")); // true
+/* let phrase = "Hello, world!";
+console.log(phrase.includes("World")); // true
 console.log(phrase.includes("llo, w")); // true
 console.log(phrase.includes("World")); // false
-console.log(phrase.includes("foo"));   // false
+console.log(phrase.includes("foo"));   // false */
 
 // startsWith  - метод перевіряє, чи починається рядок з певної підрядка.
 
-let text = "JavaScript is fun";
+/* let text = "JavaScript is fun";
 console.log(text.startsWith("JavaScript")); // true
-console.log(text.startsWith("fun"));         // false
+console.log(text.startsWith("fun"));         // false */
 
 
 // indexOf / lastIndexOf 
@@ -375,12 +357,12 @@ console.log(text.startsWith("fun"));         // false
 lastIndexOf(): Повертає останнє входження підрядка в рядок або -1, якщо підрядок не знайдено.
  */
 
-let sentence = "Find the location of the word 'the' in this sentence.";
+/* let sentence = "Find the location of the word 'the' in this sentence.";
 
 console.log(sentence.indexOf("the"));         // 5 (перше входження)
 console.log(sentence.lastIndexOf("the"));     // 31 (останнє входження)
 console.log(sentence.indexOf("word"));         // 25
-console.log(sentence.indexOf("missing"));      // -1
+console.log(sentence.indexOf("missing"));      // -1 */
 
 
 // padStart/padEnd
@@ -393,30 +375,29 @@ console.log(number.padStart(3)); //
 console.log(number.padEnd(3));   // 
 console.log(number.padStart(3, "0")); // "005"
 console.log(number.padEnd(3, "0"));   // "500"
-console.log(number.padStart(3, "0")); // "005"
-console.log(number.padEnd(3, "*"));   // 
- */
+console.log(number.padEnd(3, "*"));   //  */
+
 
 // trim, trimStart, trimEnd 
-/* --- trim(): Видаляє пробіли з обох кінців рядка.
-   --- trimStart(): Видаляє пробіли тільки з початку рядка.
-   --- trimEnd(): Видаляє пробіли тільки з кінця рядка. */
+//* * --- trim(): Видаляє пробіли з обох кінців рядка.
+  // --- trimStart(): Видаляє пробіли тільки з початку рядка.
+   //--- trimEnd(): Видаляє пробіли тільки з кінця рядка. */
 
 /* let str = "   Hello, world!   ";
 
 console.log(str.trim());      // "Hello, world!"
 console.log(str.trimStart()); // "Hello, world!   "
-console.log(str.trimEnd());   // "   Hello, world!" */
-
+console.log(str.trimEnd());   // "   Hello, world!"
+ */
 
 // replace
 /* Метод replace() замінює перше входження підрядка або регулярного виразу на новий рядок. */
 
-/* let greeting = "Hello, John!";
+/* let greeting = "Hello, John, John!";
 let newGreeting = greeting.replace("John", "Jane");
 
-console.log(newGreeting); // "Hello, Jane!" */
-
+console.log(newGreeting); // "Hello, Jane!"
+ */
 
 
 // substring/ substr/ slice
@@ -424,23 +405,23 @@ console.log(newGreeting); // "Hello, Jane!" */
 --- substr(start, length): Повертає частину рядка, починаючи з start на length символів.
 --- slice(start, end): Повертає частину рядка між start і end (не включаючи end), підтримує від'ємні індекси. */
 
-/* let text = "JavaScript";
+let text = "JavaScript";
 
 console.log(text.substring(0, 4)); // "Java"
 console.log(text.substr(4, 6));    // "Script"
 console.log(text.slice(4));       // "Script"
-console.log(text.slice(-6));      // "Script" */
+console.log(text.slice(-6));      // "Script"
 
 // toUpperCase / toLowCase
 
-/* let greeting = "Hello, World!";
+let greeting = "Hello, World!";
 let upperCaseGreeting = greeting.toUpperCase();
 
 console.log(upperCaseGreeting); // "HELLO, WORLD!"
- */
 
-/* let greeting = "Hello, World!";
+
+let greeting = "Hello, World!";
 let lowerCaseGreeting = greeting.toLowerCase();
 
-console.log(lowerCaseGreeting); // "hello, world!" */
+console.log(lowerCaseGreeting); // "hello, world!"
 
