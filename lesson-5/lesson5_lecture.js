@@ -39,12 +39,13 @@ function sum(){ //спосіб 2
   // Чому не працює? 
   
   function sum() {
+    let result = 0;
     for (let i = 0; i < 5; i++){
-        let result +=i;
+        result += i; // let result = result + i
     }
+    return result;
 }
-
-sum();
+console.log(sum());
 
 
 
@@ -82,9 +83,14 @@ console.log(str2, typeof str2)
 
 
 // Перевірити, чи є значення NaN
-console.log(Number.isNaN(str));
-console.log(Number.isNaN(str1));
-console.log(Number.isNaN(str2));
+let str = "asdf";
+let num = Number(str);
+console.log(num, typeof num);
+
+
+console.log(Number.isNaN(str)); // false
+console.log(Number.isNaN(num)); // false
+console.log(Number.isNaN("str")); 
 
 
 
@@ -116,7 +122,7 @@ console.log(Number.parseFloat("123.45"));
 
 // Перетворити число на рядок
 
-num = 123;
+let num = 123;
 
 
 
@@ -165,12 +171,14 @@ console.log("  Привіт  ".trim())
     genres: ["historical prose", "adventure"],
     isPublic: true,
     rating: 8.38,
+    
   }; */
   
 
 /* 02. --- Ви також можете створити об'єкт за допомогою конструктора Object: */
 
 /* const book = new Object(); // Створюємо порожній об'єкт
+console.log(book); // Виведе: {}
 book.title = "The Last Kingdom"; 
 book.author = "Bernard Cornwell"; 
 book.genres = ["historical prose", "adventure"];
@@ -197,8 +205,8 @@ const book = {
   rating,   // Додає властивість rating
 };
 
-console.log(book);
- */
+console.log(book); */
+
 
 /* Якщо ім'я змінної збігається з назвою властивості, можна просто записати ім'я змінної без додаткового присвоєння 
 (title замість title: title).  */
@@ -206,7 +214,7 @@ console.log(book);
 
 /* --- 04. Ви можете створити порожній об'єкт і потім додати властивості до нього. */
 
-/* // Створення порожнього об'єкта
+// Створення порожнього об'єкта
 const book = {};
 
 // Додавання властивостей до об'єкта
@@ -217,7 +225,7 @@ book.isPublic = true;                      // Додаємо властивіс�
 book.rating = 8.38;                        // Додаємо властивість rating
 
 console.log(book);
- */
+
 
 
 
@@ -229,20 +237,25 @@ console.log(book);
 // --- Доступ через крапку: Використовується, коли ви точно знаєте назву властивості. 
 // Це найчитабельніший спосіб.
 
-/* const book = {
+/*const book = {
     title: "The Last Kingdom",
     author: "Bernard Cornwell",
     rating: 8.38,
+    publishPlace: {
+      country:"UK",
+      city:"London"},
   };
   
   // Доступ до властивостей об'єкта через крапку 
   console.log(book.title);  
   console.log(book.author);
   console.log(book.rating); 
+  console.log(book.publishPlace.country); 
+  console.log(book.publishPlace.city);
 
   //  звернутися до властивості якої немає
-  // console.log(book.absentProperty)
-*/
+  console.log(book.absentProperty) */
+
 
 // --- Доступ через квадратні дужки: Необхідний, коли назва властивості динамічна, 
 // зберігається у змінній, містить пробіли або інші символи, які не підходять для доступу через крапку.
@@ -272,8 +285,8 @@ console.log(book);
 вже існуючої властивості. Якщо під час запису значення за ім'ям, така властивість в об'єкті відсутня, 
 вона буде створена.
 */
-
-/* const book = {
+/* 
+const book = {
     title: "The Last Kingdom",
     author: "Bernard Cornwell",
     genres: ["historical prose", "adventure"],
@@ -282,12 +295,13 @@ console.log(book);
   };
   
   book.pageCount = 836;
-  book.originalLanguage = "en";
+  book["originalLanguage"] = "en";
   book["translations"] = ["ua", "ru"];
   
   console.log(book.pageCount); // 836
   console.log(book.originalLanguage); // 'en'
   console.log(book.translations); // ['ua', 'ru']
+  console.log(book);
    */
 
 /* --- Зміна властивостей 
@@ -310,6 +324,7 @@ console.log(book);
 user.name = "Jane"; 
 user.age = 25; 
 user.isActive = false;
+user.gender = "female"
 
 console.log(user);  */
 
@@ -332,8 +347,8 @@ console.log(user);  */
   // Видалення властивості
   delete user.age;  
   
-  console.log(user); */
-
+  console.log(user);
+ */
   
 /* --- Обчислювальні значення 
 
@@ -362,7 +377,7 @@ console.log(user.name); // 'Генрі Сибола'
 Значенням властивості може бути інший об'єкт, для того, щоб зберігати вкладені і згруповані дані. 
 */
 
-/* const user = {
+const user = {
     name: "Jacques Gluke",
     tag: "jgluke",
     location: {
@@ -377,7 +392,7 @@ console.log(user.name); // 'Генрі Сибола'
   };
   
 console.log(user.location.city)
- */
+
 
 /* --- Методи 
 
@@ -389,7 +404,10 @@ console.log(user.location.city)
 // Повертає масив ключів (імен властивостей) об'єкта.
 
 
-/* const user = { name: "Alice", age: 25 };
+/* const user = { 
+  name: "Alice",
+  age: 25 
+  };
 console.log(Object.keys(user)); // Виведе: ['name', 'age']
  */
 
@@ -403,16 +421,16 @@ console.log(Object.values(user)); // Виведе: ['Alice', 25]
 
 // --- Object.entries(obj)
 // Повертає масив пар [ключ, значення] для кожної властивості об'єкта.
-
-/* const user = { name: "Alice", age: 25 };
+/* 
+const user = { name: "Alice", age: 25 };
 console.log(Object.entries(user)); // Виведе: [['name', 'Alice'], ['age', 25]]
  */
 
 // --- Object.create(proto)
 // Дозволяє створювати об'єкти з певним набором властивостей і методів, успадкованих від іншого об'єкта
 
-/* // Базовий об'єкт book, який буде використовуватися як прототип
-const book = {
+// Базовий об'єкт book, який буде використовуватися як прототип
+/* const book = {
     title: "1984",
     author: "George Orwell"
   };
@@ -427,12 +445,12 @@ const book = {
   console.log(newBook.title);   // Результат: "1984" (успадкована властивість)
   console.log(newBook.author);  // Результат: "George Orwell" (успадкована властивість)
   console.log(newBook.year);    // Результат: 1949 (власна властивість)
-   */
-
+  
+ */
 
   // --- Object.hasOwnProperty(propertyName)
 
-/*   // Базовий об'єкт з властивістю 'name'
+  // Базовий об'єкт з властивістю 'name'
     const person = {
     name: "Alice",
   };
@@ -442,8 +460,8 @@ const book = {
   newPerson.age = 30;
   
   console.log(newPerson.hasOwnProperty("age"));  // Виведе: true, бо 'age' є власною властивістю
-  console.log(newPerson.hasOwnProperty("name")); // Виведе: false, бо 'name' успадкована від person */
-  
+  console.log(newPerson.hasOwnProperty("name")); // Виведе: false, бо 'name' успадкована від person
+ console.log('name' in newPerson); // true
 
 /* --- This */
 
@@ -467,10 +485,7 @@ const book = {
       console.log("Цей метод буде додавати нову книгу у властивість books");
     },
   };
-  
-  // Виклики методів
-  bookShelf.getBooks();
-  bookShelf.addBook("Нова книга"); */
+   */
   
 
  /*  Такі об'єкти можна назвати «моделями». 
@@ -508,7 +523,8 @@ function addBook() {} */
 стандартно - «через крапку» до властивостей.
  */
 
-/* const bookShelf = {
+/* 
+const bookShelf = {
     books: ["The Last Kingdom"],
     getBooks() {
       return this.books;
@@ -528,8 +544,7 @@ function addBook() {} */
   console.log(bookShelf.getBooks()); // ['The Last Kingdom', 'The Mist', 'Dream Guardian']
   bookShelf.removeBook("The Mist");
   console.log(bookShelf.getBooks()); // ['The Last Kingdom', 'Dream Guardian']
- */  
-
+ */
 
 
 
@@ -551,8 +566,8 @@ function addBook() {} */
   
   console.log(uname);  // Виведе: Alice
   console.log(age);   // Виведе: 25
-  console.log(email); // Виведе: alice@example.com */
-  
+  console.log(email); // Виведе: alice@example.com
+   */
  /*  Як працює деструктуризація:
 
   1. Синтаксис: Ви вказуєте властивості об'єкта в фігурних дужках { } зліва від оператора присвоєння =.
@@ -563,7 +578,7 @@ function addBook() {} */
 /*   1. Деструктуризація з перейменуванням:
 Ви можете перейменувати змінні під час деструктуризації. */
 
-/* const product = {
+const product = {
     title: "Laptop",
     price: 1200,
   };
@@ -573,13 +588,13 @@ function addBook() {} */
   
   console.log(productName);
   console.log(productPrice); 
-   */
+  
 
 
 /*   2. Деструктуризація з значеннями за замовчуванням:
   Якщо властивість відсутня, можна задати значення за замовчуванням. */
 
-/*   const car = {
+  const car = {
     brand: "Toyota",
   };
   
@@ -587,7 +602,7 @@ function addBook() {} */
   const { brand, model = "Unknown" } = car;
   
   console.log(brand); 
-  console.log(model); */
+  console.log(model);
 
   
 /*   3. Деструктуризація вкладених об'єктів:
@@ -619,8 +634,8 @@ console.log(country); // Виведе: USA
  Вони використовуються для того, щоб контролювати, як значення властивостей встановлюються і отримуються. 
  Зазвичай вони застосовуються в класах, але також можуть бути використані в об'єктах. */
 
-
-/*  let obj = {
+/* 
+ let obj = {
     get propName(){
         // гетер, код виконано під час отримання obj.propName
     },
@@ -632,11 +647,12 @@ console.log(country); // Виведе: USA
  } */
 
 
-/* let user = {
+let user = {
     name: "John",
     surname: "Snow",
 
     get fullName() {
+      
         return `${this.name} ${this.surname}` ;
     },
 
@@ -651,7 +667,21 @@ console.log(user.fullName);
 user.fullName = "Arya Stark"; 
 console.log(user.fullName); 
 console.log(user.name); 
-console.log(user.surname);  */
+console.log(user.surname);  
+
+let password = {
+    _password: "",
+
+    get password() {
+      if (this._password.length < 8) {
+        return "Password is too short";
+      }
+      return this._password;
+    },
+    set password(value) {
+      this._password = value;
+    }
+}
 
 
 /* ---  In 
@@ -662,7 +692,7 @@ console.log(user.surname);  */
 кі успадковані через ланцюг прототипів.
 */
 
-/* const person = {
+const person = {
     name: 'John',
     age: 30
   };
@@ -670,27 +700,32 @@ console.log(user.surname);  */
   console.log('name' in person); // Виведе: true
   console.log('age' in person);  // Виведе: true
   console.log('address' in person); // Виведе: false
- */  
+  
 
 
 
   // давайте розглянемо наступну ситуацію: 
 
 
-/* let user = {
+let user = {
     login: 25,
-    unsubscribeDate: undefined
+    unsubscribeDate: undefined,
+    getFullName: function() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  
 }
 
-if(user.login) {
+if(user.unsubscribeDate) {
     console.log("Властивість user.login існує");
 } else {
     console.log("Властивість user.login не знайдено");
-} */
+}
 
 
 
-/* let user = {
+let user = {
     login: 25,
     unsubscribeDate: undefined
 }
@@ -699,7 +734,7 @@ if("unsubscribeDate" in user) {
     console.log("Властивість unsubscribeDate існує");
 } else {
     console.log("Властивість unsubscribeDate не знайдено");
-} */
+}
 
 /* --- For .. in  
 
@@ -711,7 +746,7 @@ if("unsubscribeDate" in user) {
     // Виконати код для кожної властивості
   } */
   
-/*     const person = {
+ /*    const person = {
         firstName: "John",
         lastName: "Doe",
         age: 30
@@ -720,18 +755,4 @@ if("unsubscribeDate" in user) {
       for (let key in person) {
         console.log(key); // Виведе: firstName, lastName, age
         console.log(person[key]); // Виведе: John, Doe, 30
-      }
-       */
-
-
-// Потрібно написати код, який буде перевіряти чи є властивість власна, 
-// та після цього виводити всі властивості об'єкта у вигляді пар "ключ: значення".
-
-
-let obj = {
-    name: "John",
-    age: 30,
-    profession: "developer"
-  };
-  
-
+      } */
