@@ -315,7 +315,7 @@ console.log(clients.slice(2));  */
 
 // splice(position, num)
 
-/* const scores = [1, 2, 3, 4, 5];
+const scores = [1, 2, 3, 4, 5];
 
 // Видаляємо три елементи масиву, починаючи з першого елемента (індекс 0)
 const deletedScores = scores.splice(0, 3);
@@ -324,7 +324,7 @@ const deletedScores = scores.splice(0, 3);
 console.log(scores); // [4, 5]
 
 // А масив deletedScores містить три видалені елементи
-console.log(deletedScores); // [1, 2, 3] */
+console.log(deletedScores); // [1, 2, 3]
 
 
 /* --- Метод sort() в JavaScript використовується для сортування елементів масиву. 
@@ -500,8 +500,8 @@ const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
 console.log([1, 2, 3, 4, 5].every(value => value >= 0));
 
 // Усі елементи більші або дорівнюють нулю? - ні
-console.log([1, 2, 3, -10, 4, 5].every(value => value >= 0));  */
-
+console.log([1, 2, 3, -10, 4, 5].every(value => value >= 0)); 
+ */
 
 /* some()​ Перевіряє, чи проходить хоча б один елемент масиву тест колбек-функції. Повертає true або false. */
 
@@ -593,14 +593,14 @@ iterable — колекція, яка містить ітерабельні (щ�
 
 for (const client of clients) {
   console.log(client);
-}
+} */
 
-const string = "javascript";
+/* const string = "javascript";
 
 for (const character of string) {
   console.log(character);
 }
- */
+  */
 
 
 // -- Складні об'єкти та рекурсивний підхід
@@ -616,25 +616,7 @@ for (const character of string) {
   
   countdown(5); */
   
-/*   const companies = [
-    { name: 'Компанія A',quantity: 100},
-    { name: 'Компанія B', quantity: 50 },
-    { name: 'Компанія C', quantity: 80 }
-  ];
-  
-  function findCompanyByName(arr, companyName) {
-
-    for (let company of arr) {
-        if (company.name === companyName){
-            return company
-        }
-    }
-    return null
-  }
-  
-  console.log(findCompanyByName(companies, 'Компанія B'));  // Знайде компанію B */
-  
-
+/* 
 const familyTree = {
     name: 'Іван',
     role: 'Дідусь',
@@ -691,5 +673,5 @@ console.log(findPersonByName(familyTree, 'Марія'));
 console.log(findPersonByName(familyTree, 'Петро'));  
 console.log(findPersonByName(familyTree, 'Василь')); 
 ;
-  
+   */
 
