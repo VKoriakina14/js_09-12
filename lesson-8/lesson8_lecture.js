@@ -659,8 +659,8 @@ d -  захоплення індексів (indices). Прапор d збері�
 
 
 // Найпростіший випадок - реєстронезалежний пошук
-
-/* const str = "Ох вже ця вічно ВОзНЯ з регістром";
+/* 
+const str = "Ох вже ця вічно ВОзНЯ з регістром";
 const regex = /возня/;
 
 console.log("Знайшли щось? " + regex.test(str));
@@ -676,8 +676,8 @@ console.log("А що саме? " + str.match(regex));
 //Ще приклад
 const str = "The fat cat sat on the mat.";
 const regex = /The/ig;
-console.log("А що саме? " + str.match(regex)); */
-
+console.log("А що саме? " + str.match(regex));
+ */
 
 // Наша задача - замінити мишей на ховрахів
 // Знайдеться все. Нащ перший приклад: 
@@ -688,8 +688,8 @@ console.log("Було: " + str + "\nСтало: " + res); */
 
 
 // спробуємо з прапором - g
-// Знайдеться все. Нащ перший приклад: 
-/* const str = "миші щури, знову миші, хом'яки, ховрахи";
+/* // Знайдеться все. Нащ перший приклад: 
+const str = "миші щури, знову миші, хом'яки, ховрахи";
 const regexp = /миші/g; 
 const res = str.replace(regexp, "ховрахи");
 console.log("Було: " + str + "\nСтало: " + res); */
@@ -707,43 +707,44 @@ console.log(str.match(regexp)); */
 
 
 // прапор m (multiline)
-let str = `1е місце: Іванко
+/* let str = `1е місце: Іванко
 2е місце: Михайло
 3е місце: Ганна`;
 
-console.log(str.match(/^\d/g));
+console.log(str.match(/^\d/g)); */
 
 // Виправляємо:
-let str = `1е місце: Іванко
+/* let str = `1е місце: Іванко
 2е місце: Михайло
 3е місце: Ганна`;
 
 console.log(str.match(/^\d/gm));
-
+ */
 
 // Наступна задача - замінити перші літери на * 
 /* const str ="abc\ndef\nghi";
 const regex = /^[a-z]/g;
 const res = str.replace(regex, "*");
-console.log(res); */
+console.log(res);
 
 //Виправляємо! 
-/* const str ="abc\ndef\nghi";
+const str ="abc\ndef\nghi";
 const regex = /^[a-z]/gm;
 const res = str.replace(regex, "*");
-console.log(res); */
+console.log(res);
+ */
 
 //Приклад з кінцем речення
-let str = `Іванко: 1
+/* let str = `Іванко: 1
 Михайло: 2
 Ганна: 3`;
 
-console.log(str.match(/\d$/gm));
+console.log(str.match(/\d$/gm)); */
 
 
 // Посилання у регулярних виразах 
 
-const regex = /['"][^'"]*['"]/;
+/* const regex = /['"][^'"]*['"]/;
 // let str = "abc\"def\"ghijk";
 // let str = "abc\'def\'ghijk";
 let str = "abc\"def\'ghijk";
@@ -751,6 +752,16 @@ console.log(str);
 console.log(regex.test(str));
 console.log(str.match(regex));
 
+
+let str = `He said: "She's the best!"`
+let regexp1 = /['"](.*?)['"]/g
+console.log(regexp1.test(str));
+console.log(str.match(regexp1));
+
+let regexp2 =  /(['"])(.*?)\1/g
+console.log(regexp2.test(str));
+console.log(str.match(regexp2));
+ */
 /* 
 Частину шаблону можна укласти в дужки (...). Це назвається "дужкова груп".
 
@@ -759,17 +770,23 @@ console.log(str.match(regex));
 - Дозволяє помістити частину збігу в окремий масив
 - Якщо встановити квантифікатор після дужок, то він застосовуватиметься до всього вмісту дужки, а не до окремого символу, що стоїть перед ним.
 */
-/* 
-const str = "Publication Date: 2021-09-06" // Якщо ми хочемо отримати окремі компоненти дат: рік, місяц та день 
+
+/* const str = "Publication Date: 2021-09-06" // Якщо ми хочемо отримати окремі компоненти дат: рік, місяц та день 
 const regex = /(\d{4})-(\d{2})-(\d{2})/;
 const res = str.match(regex);
-console.log(res); */
+console.log(res);
+
+const year = res[1]
+const month = res[2]
+const day = res[3]
+
+console.log(year, month, day)
 
 //До групи можно звернутися у шаблоні, використовуючи \N, де N - це номер группи
 let str = `He said: "She's the one!".`;
 let regexp = /['"](.*?)['"]/g; // (.*?) - це неіменована захоплююча група, яка збігається з будь-яким текстом (включаючи пробіли) з найменшою можливою кількістю символів до першого збігу з наступною частиною шаблону.
 console.log(str.match(regexp)); // Результат не той, що хотілось би
-
+ */
 //Для того, щоб шаблон шукав закриваючу лапку таку саму, як і відкриваючу, обгорнемо відкриваючі лапки в дужки, створивши захоплюючу групу, а потім використаємо \1, щоб звернутися до цієї групи в шаблоні, гарантуючи, що закриваюча лапка буде такою ж, як і відкриваюча.
 
 
@@ -802,10 +819,10 @@ console.log("Після редагування: " + res);
 console.log("Зразок: " + str);
 
 const regexp = /(Вася) (Пупкін)/;
-// const res = str.replace(regexp, "$2 $1");
+//const res = str.replace(regexp, "$2 $1");
 // const res = str.replace(regexp, "$1 $`"); // ` - частина рядка до збігу
-// const res = str.replace(regexp, "$1 _$'_"); // ` - частина рядка після збігу
-const res = str.replace(regexp, "$1 _$&_"); //  Збіг цілком
+//const res = str.replace(regexp, "$1 _$'_"); // ` - частина рядка після збігу
+//const res = str.replace(regexp, "$1 _$&_"); //  Збіг цілком
 
 console.log(res); */
 
@@ -827,7 +844,7 @@ console.log(res); */
 Це спеціальний символ, який допомагає знайти межі слів у тексті. */
 
 /* const str = "The word is on the list. Wordsmith is a different case.";
-const regex = /\bword\b/gi;
+const regex = /word/gi;
 const result = str.match(regex);
 console.log(result); // ["word"] */
 
